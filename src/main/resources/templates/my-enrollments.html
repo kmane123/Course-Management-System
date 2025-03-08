@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Student Profile Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+</head>
+
+<body>
+
+    <!-- header starts -->
+     <div th:if="${sessionUser == null OR sessionUser == ''}">
+    	<div th:replace="~{fragments/header :: crm-header}"></div>
+    </div>
+    <div th:unless="${sessionUser == null OR sessionUser == ''}">
+    	<div th:replace="~{fragments/user-header :: u-header}"></div>
+    </div>
+
+
+    <!-- header ends -->
+
+    <!-- main content starts -->
+    <main class="container-fluid">
+        <!-- content -->
+        <section class="container py-5 bg-light">
+            <h3 class="text-center mb-4"> My Enrollments </h3>
+
+            <!-- courses -->
+            <div class="row g-4">
+                <!-- one course card start -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="card" style="width: 18rem;">
+                        <img src="images/corejava.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Core Java</h5>
+                            <p class="card-text">
+                                This course contains core java concepts, interview preparation, case studies and 5
+                                projects
+                            </p>
+                            <a href="#" class="btn btn-primary">Start Course</a>
+                        </div>
+                        <div class="card-footer text-body-secondary">
+                            Updated : 2 days ago
+                        </div>
+                    </div>
+                </div>
+                <!-- one course card ends -->
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="card" style="width: 18rem;">
+                        <img src="images/corejava.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Core Java</h5>
+                            <p class="card-text">
+                                This course contains core java concepts, interview preparation, case studies and 5
+                                projects
+                            </p>
+                            <a href="#" class="btn btn-primary">Start Course</a>
+                        </div>
+                        <div class="card-footer text-body-secondary">
+                            Updated : 2 days ago
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+    <!-- main content ends -->
+
+    <!-- footer starts -->
+        <div th:replace="~{fragments/footer :: crm-footer}"></div>
+
+    <!-- footer ends -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
